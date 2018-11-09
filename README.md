@@ -12,7 +12,10 @@ cp spark_conf/* spark-2.3.1-bin-hadoop2.7/conf/.
 In this example we are going to configure 1 node as a master and 10 nodes as workers
 
 cp spark_scripts/* in your $HOME directory
-./spart_start
+cp -r bash_scripts in your $HOME directory
+
+./spark_start
+Note: All the necesary scripts ( for starting the master and the workers) are under bash_scripts directory
 
 
 # Submit a spark application to the Spark cluster
