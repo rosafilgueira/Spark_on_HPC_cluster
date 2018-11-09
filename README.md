@@ -7,7 +7,9 @@ This repository describe the steps necesaries to create a Spark cluster within a
 
 # Change the Spark configurable files
 	cp spark_conf/* spark-2.3.1-bin-hadoop2.7/conf/.
-
+	
+	
+  Note: JAVA_HOME needes to be updated - in spark-env.sh
 # Start a Spark cluster within a PBS job
 In this example we are going to configure 1 node as a master and 10 nodes as workers
 
@@ -15,7 +17,7 @@ In this example we are going to configure 1 node as a master and 10 nodes as wor
 	cp -r bash_scripts in your $HOME directory
 	./spark_start.sh
 
- Note: All the necesary scripts ( for starting the master and the workers) are under bash_scripts directory
+ Note: All the necesary scripts ( for starting the master and the workers) are under bash_scripts directory. JAVA_HOME needs  to point to your java. 
 
 
 # Submit a spark application to the Spark cluster
