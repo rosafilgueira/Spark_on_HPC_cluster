@@ -9,7 +9,7 @@ This repository describes all the steps necesaries to create a Spark cluster wit
 	cp spark_conf/* spark-2.3.1-bin-hadoop2.7/conf/.
 	
 	
-  Note: JAVA_HOME needs to be updated - in spark-env.sh. You might want to configure more parameters inside spark-defaults.conf file (e.g. tmp directory or log directory). 
+  Note: JAVA_HOME needs to be updated - in spark-env.sh. You might also want to configure more parameters inside spark-defaults.conf file (e.g. tmp directory or log directory). 
   
 # Start a Spark cluster within a PBS job
 This PBS-job provisions on-demand and for a specific period of time the desired spark cluster by starting the master, workers and registering all workers against master. 
