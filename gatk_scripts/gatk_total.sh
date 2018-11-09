@@ -35,5 +35,3 @@ gatk ApplyBQSRSpark \
 --total-executor-cores 720 \
 --executor-memory 250G 
 
-#cd ..
-#./spark_stop.sh
