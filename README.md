@@ -1,5 +1,5 @@
 # Spark_on_HPC_cluster
-This repository describe the steps necesaries to create a Spark cluster within a PBS-job. We have tested those scripts using Cirrus HPC cluster, hosted at EPCC ( Universtiy of Edinburgh)
+This repository describes all the steps necesaries to create a Spark cluster within a PBS-job. We have tested those scripts using Cirrus HPC cluster, hosted at EPCC ( Universtiy of Edinburgh)
 
 # Download Spark
 	wget http://apache.mirror.anlx.net/spark/spark-2.3.1/spark-2.3.1-bin-hadoop2.7.tgz
@@ -9,9 +9,12 @@ This repository describe the steps necesaries to create a Spark cluster within a
 	cp spark_conf/* spark-2.3.1-bin-hadoop2.7/conf/.
 	
 	
-  Note: JAVA_HOME needes to be updated - in spark-env.sh
+  Note: JAVA_HOME needs to be updated - in spark-env.sh. You might want to configure more parameters inside spark-defaults.conf file (e.g. tmp directory or log directory). 
+  
 # Start a Spark cluster within a PBS job
-In this example we are going to configure 1 node as a master and 10 nodes as workers
+This PBS-job provisions on-demand and for a specific period of time the desired spark cluster by starting the master, workers and registering all workers against master. 
+
+You can modify it as you wish for reserving more or less nodes for your spark cluster. In the current scipt, we have used 11 nodes: one node for running the master, and 10 nodes for running the workers (each worker in one node). 
 
 	cp spark_scripts/* in your $HOME directory
 	cp -r bash_scripts in your $HOME directory
