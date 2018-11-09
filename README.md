@@ -20,10 +20,11 @@ Note: All the necesary scripts ( for starting the master and the workers) are un
 
 # Submit a spark application to the Spark cluster
 Once you have the spark cluster running ( your PBS job has been accepted and you have the resoureces available), you can submit spark applications to it. 
-In this example we are going to submit two genomics spark applications to i. 
+
+Just as an exmaple, you can find here the PBS job (gatk_total.sh) for running two genomics spark applications (*BaseRecalibratorSpark* and *ApplyBQSRSpark*) in the spark cluster. 
 Note: Change the master URL - check the bash_scripts/master.log 
 
-./gat_total.sh 
+./gatk_total.sh 
 
 #Dowloading the lustre-connector
 You might need to have the luster-connector. Those are the steps in case you need it.
