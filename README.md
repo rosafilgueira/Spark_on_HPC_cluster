@@ -25,8 +25,8 @@ Note: Change the master URL - check the bash_scripts/master.log
 
 ./gat_total.sh 
 
-
 #Dowloading the lustre-connector
+You might need to have the luster-connector. Those are the steps in case you need it.
 git clone https://github.com/whamcloud/lustre-connector-for-hadoop.git
 cd lustre-connector-for-hadoop
 mvn package
