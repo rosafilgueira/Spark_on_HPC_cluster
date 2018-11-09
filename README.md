@@ -1,5 +1,5 @@
 # Spark_on_HPC_cluster
-This repository describes all the steps necesaries to create a Spark cluster within a PBS-job. We have tested those scripts using Cirrus HPC cluster, hosted at EPCC ( Universtiy of Edinburgh)
+This repository describes all the steps necesaries to create a **multinode Spark standalone cluster** within a PBS-job. We have tested those scripts using Cirrus HPC cluster, hosted at EPCC ( Universtiy of Edinburgh)
 
 # Download Spark
 	wget http://apache.mirror.anlx.net/spark/spark-2.3.1/spark-2.3.1-bin-hadoop2.7.tgz
