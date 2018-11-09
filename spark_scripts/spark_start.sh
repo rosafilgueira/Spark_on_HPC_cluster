@@ -14,11 +14,14 @@ export JAVA_HOME=/lustre/sw/spack/opt/spack/linux-centos7-x86_64/gcc-6.2.0/jdk-8
 cd $HOME/bash_scripts
 
 # start resource manager only once
+./start_master.sh
 echo "`hostname`" > master.log
 mastername=`hostname`
 echo "Started master on" $mastername
 
+# start slaves
 export MPI_SHEPHERD=true
 mpiexec_mpt -n $NUM_NODES -ppn 1 $HOME/bash_scripts/start_slave.sh $mastername &
 
-sleep 5h
+sleep 12h
+
