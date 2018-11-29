@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -N Spark
-#PBS -l walltime=5:00:00
-#PBS -l select=11:ncpus=72
+#PBS -l walltime=12:00:00
+#PBS -l select=11:ncpus=36
 #PBS -l place=excl
 #PBS -A xxxxx
 
