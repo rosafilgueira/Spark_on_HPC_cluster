@@ -23,12 +23,21 @@ You can modify it as you wish for reserving more or less nodes for your spark cl
  Note: All the necesary scripts ( for starting the master and the workers) are under bash_scripts directory. JAVA_HOME needs  to point to your java. 
 
 
-# Submit a spark application to the Spark cluster
+# Submit spark applications to the Spark cluster
 Once you have the spark cluster running ( your PBS job has been accepted and you have the resoureces available), you can submit spark applications to it. 
 
-Just as an exmaple, you can find here the PBS job (gatk_total.sh) for running two genomics spark applications (*BaseRecalibratorSpark* and *ApplyBQSRSpark*) in the spark cluster. 
+1) Just as an exmaple, you can find here the PBS job (gatk_total.sh) for running two genomics spark applications (*BaseRecalibratorSpark* and *ApplyBQSRSpark*) in the spark cluster. 
 
 	./gatk_total.sh 
+	
+2) Another example is the following one, where we submit the SparkPi example to Spark-Cluster from the login node. 
+
+Note: Replace XXXX in the spark://XXXXX:7077, by master node
+
+	spark-2.3.1-bin-hadoop2.7/bin/spark-submit --verbose --class org.apache.spark.examples.SparkPi \ 
+	--master spark://XXXXX:7077 --deploy-mode cluster --supervise --executor-memory 2g \
+	--total-executor-cores 2 spark-2.3.1-bin-hadoop2.7/examples/jars/spark-examples_2.11-2.3.1.jar 10 >> 	output_spark_cluster &
+	
 
 Note: Change the master URL - check the bash_scripts/master.log 
 
