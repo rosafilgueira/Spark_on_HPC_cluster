@@ -1,5 +1,5 @@
 # Spark_on_HPC_cluster
-This repository describes all the steps necesaries to create a **multinode Spark standalone cluster** within a PBS-job. We have tested those scripts using Cirrus HPC cluster, hosted at EPCC ( Universtiy of Edinburgh)
+This repository describes all the steps necesaries to create a **multinode Spark standalone cluster** within a PBS-job (we are going to give you two options). We have tested those scripts using Cirrus HPC cluster, hosted at EPCC ( Universtiy of Edinburgh)
 
 # Download Spark
 	wget http://apache.mirror.anlx.net/spark/spark-2.3.1/spark-2.3.1-bin-hadoop2.7.tgz
@@ -14,8 +14,8 @@ This repository describes all the steps necesaries to create a **multinode Spark
 # Start a Spark cluster within a PBS job
 We have two similar PBS-jobs to provision on-demand and for a specific period of time the desired spark cluster by starting the master, workers and registering all workers against master. 
 
-  	spark_start.sh --> Uses mpiexec_mpt to start the spark workers
-  	spart_start_ssh2.sh --> Uses ssh to login into the nodes that have been reserved, and starts the spark worker in each of them. 
+  	Option 1: spark_start.sh --> Uses mpiexec_mpt to start the spark workers
+  	Option 2: spart_start_ssh2.sh --> Uses ssh to login into the nodes that have been reserved, and starts the spark worker in each of them. 
 
 Depending on the policy of your cluster, you might want to use one or another PBS script. 
 
