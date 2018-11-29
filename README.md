@@ -13,6 +13,7 @@ This repository describes all the steps necesaries to create a **multinode Spark
   
 # Start a Spark cluster within a PBS job
 We have two similar PBS-jobs to provision on-demand and for a specific period of time the desired spark cluster by starting the master, workers and registering all workers against master. 
+
   	spark_start.sh --> Uses mpiexec_mpt to start the spark workers
   	spart_start_ssh2.sh --> Uses ssh to login into the nodes that have been reserved, and starts the spark worker in each of them. 
 
