@@ -14,7 +14,7 @@ This repository describes all the steps necesaries to create a **multinode Spark
 # Start a Spark cluster within a PBS job
 We have a PBS-jobs to provision on-demand and for a specific period of time the desired spark cluster by starting the master, workers and registering all workers against master. 
 
-  	spark_start_ssh.sh --> 
+  	qsub spark_start_ssh.sh
 
 
 You can modify it as you wish for reserving more or less nodes for your spark cluster. In the current scipt, we have used 11 nodes: one node for running the master, and 10 nodes for running the workers (each worker in one node). 
