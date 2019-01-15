@@ -12,20 +12,15 @@ This repository describes all the steps necesaries to create a **multinode Spark
   Note: JAVA_HOME needs to be updated - in spark-env.sh. You might also want to configure more parameters inside spark-defaults.conf file (e.g. tmp directory or log directory). 
   
 # Start a Spark cluster within a PBS job
-We have two similar PBS-jobs to provision on-demand and for a specific period of time the desired spark cluster by starting the master, workers and registering all workers against master. 
+We have a PBS-jobs to provision on-demand and for a specific period of time the desired spark cluster by starting the master, workers and registering all workers against master. 
 
-  	Option 1: spark_start.sh --> Uses mpiexec_mpt to start the spark workers
-  	Option 2: spart_start_ssh2.sh --> Uses ssh to login into the nodes that have been reserved, and starts the spark worker in each of them. 
+  	spark_start_ssh.sh --> 
 
-Depending on the policy of your cluster, you might want to use one or another PBS script. 
 
 You can modify it as you wish for reserving more or less nodes for your spark cluster. In the current scipt, we have used 11 nodes: one node for running the master, and 10 nodes for running the workers (each worker in one node). 
 
 	cp spark_scripts/* in your $HOME directory
 	cp -r bash_scripts in your $HOME directory
-	--- Option 1 - using mpiexec_mpt
-	./spark_start.sh 
-	--- Option 2 - using ssh
 	./spark_start_ssh.sh
 
  Note: All the necesary scripts ( for starting the master and the workers) are under bash_scripts directory. JAVA_HOME needs  to point to your java. 
